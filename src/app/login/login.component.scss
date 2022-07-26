@@ -1,0 +1,49 @@
+$cor-primaria : #FFF;
+$cor-secundaria-gelo: #E0E0E0;
+$cor-primaria-vermelho : #C12D18;
+$cor-primaria-amarelo : #E9B425;
+$cor-primaria-bege : #E29933;
+$cor-primaria-preto : #000000;
+$cor-secundaria : #222222;
+$cor-gradiente-1 : linear-gradient($cor-primaria-vermelho,$cor-primaria-bege,$cor-primaria-amarelo);
+$cor-gradiente-preto : linear-gradient(#33383D,#1C1D20);
+$cor-gradiente-amarelo : linear-gradient($cor-primaria-amarelo ,$cor-primaria-bege);
+
+@mixin titulo {
+
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'mark-pro'
+}
+
+#section-login{
+  display: flex;
+  flex-flow: row wrap;
+  .colunm_1{
+    width: 50%;
+    margin: 0;
+    background-image: linear-gradient(#33383D,#1C1D20);
+    .login-title{
+      
+    }
+  }
+  .colunm_2{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    .logo{
+      position:absolute;
+    }
+    .background-compass{
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+
+
