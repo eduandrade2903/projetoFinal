@@ -7,39 +7,118 @@ $cor-primaria-preto : #000000;
 $cor-secundaria : #222222;
 $cor-gradiente-1 : linear-gradient($cor-primaria-vermelho,$cor-primaria-bege,$cor-primaria-amarelo);
 $cor-gradiente-preto : linear-gradient(#33383D,#1C1D20);
-$cor-gradiente-amarelo : linear-gradient($cor-primaria-amarelo ,$cor-primaria-bege);
+$cor-gradiente-vermelho : linear-gradient(90deg, #FF2D04 0% ,#C13216 100%);
 
 @mixin titulo {
 
 }
 
-*{
+*, html{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'mark-pro'
+  font-size: 16px;
+  font-family: 'Mark Pro';
 }
 
 #section-login{
   display: flex;
   flex-flow: row wrap;
+  height: 100%;
   .colunm_1{
-    width: 50%;
+    flex-wrap: wrap;
+    width: 45.5%;
     margin: 0;
     background-image: linear-gradient(#33383D,#1C1D20);
+
     .login-title{
-      
+      font-family: 'Mark Pro';
+      margin-top: 3.3em;
+      margin-left: 4.5em;
+      color: $cor-primaria;
+      font-weight: 400;
+      font-size: 60px;
+    }
+    .login-description {
+      margin-left: 267px;
+      color: $cor-primaria;
+      font-weight: 400;
+      font-size: 1rem ;
+      width: 35%;
+      margin-left: 16.9em;
+
+    }
+
+    .login-form {
+      display: flex;
+      flex-wrap: wrap;
+      .user-icon {
+        margin-top: 3rem;
+        margin-left: 1.3rem;
+      }
+      .user-password-icon{
+        margin-top: 3rem;
+        margin-left: 1.3rem;
+        
+      }
+      input{
+        width: 42%;
+        height: 60px;
+        padding-left: 20px;
+        border-radius: 50px;
+        margin-top: 1.95em;
+        margin-left: 16.1em;
+        background-color: #26292C;
+        border: solid 0.5px #FFF;
+        color: white;
+        &::placeholder{
+          color: $cor-secundaria-gelo;
+
+        }
+
+      }
+      .user+span::before{
+        margin-top: 5rem ;
+        opacity: 1;
+        content:url('../../assets/img/icon-user.png');
+      }
+      .password+span::before{
+        opacity: 1;
+        content:url('../../assets/img/icon-password.png');
+      }
+      .form-title{
+        margin-top: 4.5em;
+        font-size: 30px;
+        margin-left: 9em;
+        color: $cor-primaria
+
+      }
+      .btn-submit {
+        margin-top: 10em;
+        margin-left: 15.65em;
+        border: none;
+        box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.15);
+        border-radius: 50px;
+        background-image: $cor-gradiente-vermelho;
+        padding: 16px;
+        width: 42%;
+        height: 60px;
+        color: white;
+      }
     }
   }
   .colunm_2{
-    width: 50%;
+    width: 54.5%;
     display: flex;
     justify-content: center;
+
     .logo{
       position:absolute;
+
     }
     .background-compass{
       width: 100%;
+
       margin: 0;
     }
   }
