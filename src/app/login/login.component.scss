@@ -24,23 +24,23 @@ $cor-gradiente-vermelho : linear-gradient(90deg, #FF2D04 0% ,#C13216 100%);
 #section-login{
   display: flex;
   flex-flow: row wrap;
-  height: 100%;
+
   .colunm_1{
     flex-wrap: wrap;
     width: 45.5%;
     margin: 0;
     background-image: linear-gradient(#33383D,#1C1D20);
-
+    height: 940px;
     .login-title{
       font-family: 'Mark Pro';
       margin-top: 3.3em;
-      margin-left: 4.5em;
+      margin-left: 31%;
       color: $cor-primaria;
       font-weight: 400;
       font-size: 60px;
     }
     .login-description {
-      margin-left: 267px;
+      margin-left: 31%;
       color: $cor-primaria;
       font-weight: 400;
       font-size: 1rem ;
@@ -59,15 +59,16 @@ $cor-gradiente-vermelho : linear-gradient(90deg, #FF2D04 0% ,#C13216 100%);
       .user-password-icon{
         margin-top: 3rem;
         margin-left: 1.3rem;
-        
+
       }
+
       input{
         width: 42%;
         height: 60px;
         padding-left: 20px;
         border-radius: 50px;
         margin-top: 1.95em;
-        margin-left: 16.1em;
+        margin-left:31%;
         background-color: #26292C;
         border: solid 0.5px #FFF;
         color: white;
@@ -78,7 +79,6 @@ $cor-gradiente-vermelho : linear-gradient(90deg, #FF2D04 0% ,#C13216 100%);
 
       }
       .user+span::before{
-        margin-top: 5rem ;
         opacity: 1;
         content:url('../../assets/img/icon-user.png');
       }
@@ -111,7 +111,7 @@ $cor-gradiente-vermelho : linear-gradient(90deg, #FF2D04 0% ,#C13216 100%);
     width: 54.5%;
     display: flex;
     justify-content: center;
-
+    height: 940px;
     .logo{
       position:absolute;
 
