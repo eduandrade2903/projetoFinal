@@ -1,3 +1,4 @@
+
 $cor-primaria : #FFF;
 $cor-secundaria-gelo: #E0E0E0;
 $cor-primaria-vermelho : #C12D18;
@@ -9,11 +10,7 @@ $cor-gradiente-1 : linear-gradient($cor-primaria-vermelho,$cor-primaria-bege,$co
 $cor-gradiente-preto : linear-gradient(#33383D,#1C1D20);
 $cor-gradiente-vermelho : linear-gradient(90deg, #FF2D04 0% ,#C13216 100%);
 
-@mixin titulo {
-
-}
-
-*, html{
+*, html,body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -23,14 +20,13 @@ $cor-gradiente-vermelho : linear-gradient(90deg, #FF2D04 0% ,#C13216 100%);
 
 #section-login{
   display: flex;
-  flex-flow: row wrap;
-
+  grid-template-columns: 1fr 1fr;
   .colunm_1{
-    flex-wrap: wrap;
+     height: 100vh;
     width: 45.5%;
     margin: 0;
     background-image: linear-gradient(#33383D,#1C1D20);
-    height: 940px;
+
     .login-title{
       font-family: 'Mark Pro';
       margin-top: 3.3em;
@@ -40,7 +36,7 @@ $cor-gradiente-vermelho : linear-gradient(90deg, #FF2D04 0% ,#C13216 100%);
       font-size: 60px;
     }
     .login-description {
-      margin-left: 31%;
+      margin-left: 10vh;
       color: $cor-primaria;
       font-weight: 400;
       font-size: 1rem ;
@@ -76,14 +72,25 @@ $cor-gradiente-vermelho : linear-gradient(90deg, #FF2D04 0% ,#C13216 100%);
           color: $cor-secundaria-gelo;
 
         }
+        &::slotted(input){
+          border:solid 0.5px $cor-primaria-bege;
+        }
 
       }
+       .validator-error{
+        color : $cor-primaria-bege
+       }
+
+
+      .inside-user-icon::before{
+        content:url('../../assets/img/icon-user.png');
+      }
       .user+span::before{
-        opacity: 1;
+
         content:url('../../assets/img/icon-user.png');
       }
       .password+span::before{
-        opacity: 1;
+
         content:url('../../assets/img/icon-password.png');
       }
       .form-title{
@@ -109,19 +116,24 @@ $cor-gradiente-vermelho : linear-gradient(90deg, #FF2D04 0% ,#C13216 100%);
   }
   .colunm_2{
     width: 54.5%;
+    height: 100vh;
     display: flex;
-    justify-content: center;
-    height: 940px;
-    .logo{
-      position:absolute;
+    flex-direction: column;
+    background-image: url('../../assets/img/image 2.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    .logo {
+      width: 50%;
 
     }
-    .background-compass{
-      width: 100%;
 
-      margin: 0;
-    }
   }
+}
+
+@media (min-width: 375px) and (max-width: 940px)  {
+
 }
 
 

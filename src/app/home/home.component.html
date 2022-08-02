@@ -1,11 +1,23 @@
 <section class="home-section">
   <header class="head">
-    <img src="../../assets/img/LogoCompassoPreto.png" alt="" class="compass-logo-header">
-    <p>Data</p>
-    <p>localização e temperatura</p>
+    <img
+      src="../../assets/img/LogoCompasso 1.svg"
+      alt=""
+      class="compass-logo-header"
+    />
+    <p>{{ city }}</p>
   </header>
+  <div class="timer-day">
+    <h1 class="timer">{{ time }}</h1>
+    <p class="day">{{ day }}</p>
+  </div>
+
   <main class="content">
-    <img src="../../assets/img/bola-LogoCompasso 1.png" alt="" class="compass-logo">
+    <img
+      src="../../assets/img/bola-LogoCompasso 1 (1).svg"
+      alt=""
+      class="compass-logo"
+    />
     <div class="box">
       <div class="box-child">
         <h3>Our misson is</h3>
@@ -25,9 +37,18 @@
       </div>
     </div>
   </main>
-  <footer class="footer">
-    <small>Essa janela do navegador é usada para manter sua sessão de autenticação ativa. Deixe-a aberta em segundo plano e abra uma nova janela para continuar a navegar</small>
-
-  </footer>
 </section>
+<footer class="footer">
+  <small
+    >Essa janela do navegador é usada para manter sua sessão de autenticação
+    ativa. Deixe-a aberta em segundo plano e abra uma nova janela para continuar
+    a navegar</small
+  >
 
+  <p>application refresh in</p>
+
+  <div class="btns">
+    <button>Continuar Navegação</button>
+    <button>Logout</button>
+  </div>
+</footer>

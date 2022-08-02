@@ -1,22 +1,68 @@
 <main id="section-login">
   <div class="colunm_1">
     <h1 class="login-title">Olá,</h1>
-    <p class="login-description">Para continuar navegando de forma segura,
-      efetue o login na rede</p>
-    <form class="login-form">
+    <p class="login-description">
+      Para continuar navegando de forma segura, efetue o login na rede
+    </p>
+    <form
+      class="login-form"
+      (ngsubmit)="submit()"
+      [formGroup]="loginForm"
+      #formDir="ngForm"
+    >
       <h2 class="form-title">Login</h2>
+        <input
+          type="text"
+          placeholder="Usuário"
+          class="user"
+          formControlName="usuario"
+          required
+          (change)="isFull = true"
+          (blur)="
+            isFull =
+              this.loginForm.value.userName || this.loginForm.value.senha
+                ? true
+                : false
+          "
+          (focus)="isFull = true"
+        />
+      <span class="user-icon" [@moveIcon]="isFull ? 'enter' : 'leave'"></span>
+        <input
+          type="password"
+          placeholder="Senha"
+          class="password"
+          formControlName="senha"
+          required
+          (change)="isFull = true"
+          (blur)="
+            isFull =
+              this.loginForm.value.userName || this.loginForm.value.senha
+                ? true
+                : false
+          "
+          (focus)="isFull = true"
+        />
+      <span
+        class="user-password-icon"
+        [@moveIcon]="isFull ? 'enter' : 'leave'"
+      ></span>
+      <div
+        class="validator-error"
+        *ngIf="
+      loginForm.get('usuario')?.errors?.['minlength']  && loginForm.get('usuario')?.touched ||
+      loginForm.get('senha')?.errors?.['minlength'] && senha.touched">
+        <p>Ops, usuário ou senha inválidos. Tente Novamente!</p>
+      </div>
 
-      <input type="text" placeholder="Usuário" class="user">
-      <span class="user-icon"></span>
+      <input type="submit" value="continuar"/>
 
-      <input type="password" placeholder="Senha" class="password">
-      <span class="user-password-icon"></span>
-
-      <button class="btn-submit" type="submit">Continuar</button>
     </form>
   </div>
   <div class="colunm_2">
-    <img src="../../assets/img/Logo-Compasso-Branco-hor 1.png" alt="Logo Compasso Branco" class="logo">
-    <img src="../../assets/img/CompassoBackground.png" class="background-compass">
+    <img
+      src="../../assets/img/Logo-Compasso-Branco-hor 1.svg"
+      alt="Logo Compasso Branco"
+      class="logo"
+    />
   </div>
 </main>

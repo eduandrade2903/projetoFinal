@@ -1,27 +1,78 @@
-*, html{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 16px;
-  font-family: 'Mark Pro';
-}
 
-.head {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 16px;
+  *, html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Mark Pro';
 
-}
-
-.content {
-  display: flex;
-  height: 749px;
-  .compass-logo{
-    margin-top: 14.5em;
   }
-  .box {
-    margin-top:25px ;
-    width: 50%;
-    text-align: right;
+  .head {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1rem;
+    .compass-logo-header{
+      margin-top: 2rem;
+    }
   }
-}
+    .timer-day{
+      margin-top: 1rem;
+      .timer{
+        font-weight: bold;
+        font-size: 9rem;
+        margin-top: 2rem;
+        text-align: center;
+      }
+    }
+  .day {
+    margin-top:50px;
+    text-align: center;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    height: 749px;
+    .compass-logo{
+      margin-top: 5em;
+      height: 110.2%;
+      z-index: -1;
+    }
+    .box {
+      margin-top:382px;
+      width: 50%;
+      text-align: right;
+      margin-right: 100px ;
+      h3,h2{
+        font-weight: 700;
+        color : #C12D18;
+        line-height: 40px;
+      }
+      h3{
+        font-size: 2.25em;
+      }
+      h2 {
+        font-size:  4em;
+      }
+      small{
+        margin-bottom: 15px;
+      }
+    }
+
+  }
+  .footer{
+    width: 100%;
+    height: 15%;
+    background-image: linear-gradient(#33383D,#1C1D20);
+    margin-top:0;
+    display: flex;
+    justify-content: space-between;
+    small{
+      margin-top: 10px;
+      width: 40%;
+      color: black;
+      text-align: right;
+    }
+  }
+
+  @media (max-width:1900px) {}
