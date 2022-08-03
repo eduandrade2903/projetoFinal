@@ -13,6 +13,6 @@ export class GeoService {
 
 
   public getLoc(lat : number, lng : number) : Observable<any>{
-    return this.http.get<any>(`http://api.positionstack.com/v1/reverse?access_key=27a933596e2fe7505319f3404da25f9a&query=${lat},${lng}`).pipe()
+    return this.http.get<any>(`http://api.positionstack.com/v1/reverse?access_key=27a933596e2fe7505319f3404da25f9a&query=${lat},${lng}`).pipe();
   }
 }

@@ -6,7 +6,7 @@
     </p>
     <form
       class="login-form"
-      (ngsubmit)="submit()"
+      (ngSubmit)="submit()"
       [formGroup]="loginForm"
       #formDir="ngForm"
     >
@@ -18,15 +18,24 @@
           formControlName="usuario"
           required
           (change)="isFull = true"
+          (change)="isFull2 = false"
           (blur)="
             isFull =
               this.loginForm.value.userName || this.loginForm.value.senha
                 ? true
                 : false
           "
+          (blur)="
+            isFull2 =
+              this.loginForm.value.userName || this.loginForm.value.senha
+                ? false
+                : true
+          "
           (focus)="isFull = true"
+          (focus)="isFull2 = false"
         />
-      <span class="user-icon" [@moveIcon]="isFull ? 'enter' : 'leave'"></span>
+        <span class="inside-user-icon" [@moveIconInside]="isFull2 ? 'leave' : 'enter'"></span>
+      <img src="../../assets/img/icon-user.svg" class="user-icon" [@moveIcon]="isFull ? 'enter' : 'leave'"/>
         <input
           type="password"
           placeholder="Senha"
@@ -34,18 +43,28 @@
           formControlName="senha"
           required
           (change)="isFull = true"
+          (change)="isFull2 = true"
           (blur)="
             isFull =
               this.loginForm.value.userName || this.loginForm.value.senha
                 ? true
                 : false
           "
+          (blur)="
+            isFull2 =
+              this.loginForm.value.userName || this.loginForm.value.senha
+                ? false
+                : true
+          "
           (focus)="isFull = true"
+          (focus)="isFull2 = false"
         />
-      <span
+        <span class="inside-passord-icon" [@moveIconInside]="isFull2 ? 'leave' : 'enter'"></span>
+      <img src="../../assets/img/icon-password.svg"
         class="user-password-icon"
         [@moveIcon]="isFull ? 'enter' : 'leave'"
-      ></span>
+      />
+
       <div
         class="validator-error"
         *ngIf="
@@ -54,7 +73,7 @@
         <p>Ops, usuário ou senha inválidos. Tente Novamente!</p>
       </div>
 
-      <input type="submit" value="continuar"/>
+      <input class="btn-submit" type="submit" value="continuar"/>
 
     </form>
   </div>

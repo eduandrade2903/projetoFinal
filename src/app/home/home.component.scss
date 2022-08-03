@@ -39,10 +39,13 @@
       z-index: -1;
     }
     .box {
-      margin-top:382px;
+      margin-top:360px;
       width: 50%;
       text-align: right;
       margin-right: 100px ;
+      .box-child{
+        line-height: 40px;
+      }
       h3,h2{
         font-weight: 700;
         color : #C12D18;
