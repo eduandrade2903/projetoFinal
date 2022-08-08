@@ -1,0 +1,45 @@
+@import '../login/login.component.scss';
+#section-signUp {
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  .colunm_1 {
+    height: 100vh;
+    width: 45.5%;
+    margin: 0;
+    background-image: linear-gradient(#33383d, #1c1d20);
+
+    .login-form {
+
+    input{
+      width: 48%;
+      height: 60px;
+      padding-left: 20px;
+      border-radius: 50px;
+      margin-top: 1.95em;
+      margin-left:31%;
+      background-color: #26292C;
+      border: solid 0.5px #FFF;
+      color: white;
+      &::placeholder{
+        color: $cor-secundaria-gelo;
+
+      }
+    }
+
+    }
+  }
+  .colunm_2 {
+    width: 54.5%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/img/image 2.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    .logo {
+      width: 30%;
+    }
+  }
+}

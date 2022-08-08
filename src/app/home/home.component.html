@@ -5,12 +5,17 @@
       alt=""
       class="compass-logo-header"
     />
-    <p>{{ city }} - {{state}}</p>
+
+    <div class="location">
+      <p class="city">{{ city }} {{state}}</p>
+      <img src="../../assets/img/Vector.svg" class="logo_nuvem"><p class="temp"> {{ tempo }} </p>
+    </div>
   </header>
   <div class="timer-day">
     <h1 class="timer">{{ time }}</h1>
     <p class="day">{{ day }}</p>
   </div>
+
 
   <main class="content">
     <img
@@ -20,35 +25,40 @@
     />
     <div class="box">
       <div class="box-child">
-        <h3>Our misson is</h3>
-        <small>Nossa missão é</small>
+        <p class="initial">Our misson is</p>
+        <small class="pt">Nossa missão é</small >
       </div>
       <div class="box-child">
-        <h2>to transform the world</h2>
-        <small>transformar o mundo</small>
+        <p class="text">to transform the world</p>
+        <small class="pt">transformar o mundo</small>
       </div>
       <div class="box-child">
-        <h2>building digital experiences</h2>
-        <small>construindo experiências digitais</small>
+        <p class="text">building digital experiences</p>
+        <small class="pt">construindo experiências digitais</small >
       </div>
       <div class="box-child">
-        <h2>that enable our client's growth</h2>
-        <small>que permitam o crescimento dos nossos clientes</small>
+        <p class="text">that enable our client's growth</p>
+        <small class="pt">que permitam o crescimento dos nossos clientes</small>
       </div>
     </div>
   </main>
 </section>
 <footer class="footer">
-  <small
-    >Essa janela do navegador é usada para manter sua sessão de autenticação
-    ativa. Deixe-a aberta em segundo plano e abra uma nova janela para continuar
-    a navegar</small
-  >
+  <div class="information">
+    <small
+      >Essa janela do navegador é usada para manter sua sessão de autenticação
+      ativa. Deixe-a aberta em segundo plano e abra uma nova janela para continuar
+      a navegar</small>
 
-  <p>application refresh in</p>
+  </div>
 
+  <p class="app">application refresh in</p>
+  <div class="refresh">
+    <p id="countdown">60</p>
+    <p class="seconds">seconds</p>
+  </div>
   <div class="btns">
-    <button>Continuar Navegação</button>
-    <button>Logout</button>
+    <input class="btn-continue" type="submit" value= "Continuar Navegação" >
+    <input class="btn-logout" type="submit" value ="Logout">
   </div>
 </footer>

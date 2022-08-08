@@ -1,5 +1,5 @@
-
-  *, html{
+@import '../login/login.component.scss';
+  *, html, body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,7 +12,35 @@
     justify-content: space-between;
     margin-left: 1rem;
     .compass-logo-header{
-      margin-top: 2rem;
+      margin-top: 1em;
+      vertical-align: center;
+    }
+
+
+    .location{
+      display: grid;
+      grid-template-rows: 1fr;
+      width: auto;
+      align-items: center;
+      .city {
+        font-size: 14px;
+        font-weight: 400;
+        display: flex;
+       align-self: center;
+      }
+      .logo_nuvem{
+        width: 34px;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        text-align: right;
+
+      }
+      .temp{
+        grid-column-start: 2;
+        font-weight: 700;
+        font-size: 3em;
+        align-items: right;
+      }
     }
   }
     .timer-day{
@@ -32,50 +60,113 @@
   .content {
     display: flex;
     justify-content: space-between;
-    height: 749px;
+
+    height: 70vh;
     .compass-logo{
-      margin-top: 5em;
-      height: 110.2%;
+      margin-top: 2em;
+      width: 925px;
+      height: 825px;
+      margin-left: -110px;
       z-index: -1;
     }
     .box {
-      margin-top:360px;
-      width: 50%;
+      margin-top:15em;
+      width: 60%;
+      justify-content: left;
       text-align: right;
-      margin-right: 100px ;
+      font-weight: 700;
+      color : #C12D18;
+      line-height: 40px;
+      flex-wrap: nowrap;
       .box-child{
         line-height: 40px;
+        margin-right: 100px ;
       }
-      h3,h2{
-        font-weight: 700;
-        color : #C12D18;
-        line-height: 40px;
+      .initial {
+        font-size: 2.5em;
       }
-      h3{
-        font-size: 2.25em;
-      }
-      h2 {
+      .text{
         font-size:  4em;
+        font-family: "Mark Pro";
       }
-      small{
+      .pt{
         margin-bottom: 15px;
+        color: #222222;
+        font-weight: 400;
+        font-size: 24px;
       }
     }
 
   }
   .footer{
     width: 100%;
-    height: 15%;
+    height: 12vh;
     background-image: linear-gradient(#33383D,#1C1D20);
-    margin-top:0;
     display: flex;
     justify-content: space-between;
-    small{
-      margin-top: 10px;
-      width: 40%;
-      color: black;
+    align-items: center;
+    z-index: 1;
+    .information{
+      display: flex;
+      justify-content: center;
+      width: 50%;
+      small{
+        margin-top: 0;
+        width: 75%;
+        color: $cor-primaria;
+        text-align: right;
+      }
+
+
+    }
+    .line{
+      margin-left: -50px;
+    }
+    .app{
+      color: $cor-primaria;
+      margin-left: 0;
+      font-weight: 400;
+      font-size: 14px;
+      width: 5%;
       text-align: right;
+    }
+
+    .refresh{
+      align-self: center;
+      margin-top: 10px;
+      #countdown{
+        color: $cor-primaria;
+        font-weight: 700;
+        font-size: 3em;
+        align-items: center;
+
+      }
+      .seconds{
+        color: $cor-primaria;
+        font-weight: 400;
+        font-size: 14px;
+      }
+    }
+
+    .btns {
+      width: 30%;
+      text-align: end;
+      border: none;
+
+      .btn-continue{
+
+        height: 12vh;
+        text-align: center;
+
+      }
+      .btn-logout{
+        height: 12vh;
+        width: 20%;
+      }
     }
   }
 
-  @media (max-width:1900px) {}
+  @media (max-width:1900px) {
+
+
+  }
