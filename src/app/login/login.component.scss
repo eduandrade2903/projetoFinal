@@ -67,7 +67,7 @@ $cor-gradiente-vermelho : linear-gradient(90deg, #FF2D04 0% ,#C13216 100%);
         margin-left: -3em;
       }
 
-      input{
+      .user{
         width: 48%;
         height: 60px;
         padding-left: 20px;
@@ -81,9 +81,23 @@ $cor-gradiente-vermelho : linear-gradient(90deg, #FF2D04 0% ,#C13216 100%);
           color: $cor-secundaria-gelo;
 
         }
-
-
       }
+      .password{
+        width: 48%;
+        height: 60px;
+        padding-left: 20px;
+        border-radius: 50px;
+        margin-top: 1.95em;
+        margin-left:31%;
+        background-color: #26292C;
+        border: solid 0.5px #FFF;
+        color: white;
+        &::placeholder{
+          color: $cor-secundaria-gelo;
+
+        }
+      }
+
        .validator-error{
         font-size: 1em;;
         color : $cor-primaria-bege;
@@ -122,7 +136,6 @@ $cor-gradiente-vermelho : linear-gradient(90deg, #FF2D04 0% ,#C13216 100%);
         box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.15);
         border-radius: 50px;
         background-image: $cor-gradiente-vermelho;
-        padding-left: 20px;
         width: 48%;
         height: 60px;
         color: white;

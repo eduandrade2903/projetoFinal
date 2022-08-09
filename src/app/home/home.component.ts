@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Dias } from '../enums/enum-dias';
 import { Meses } from '../enums/enum-meses';
@@ -18,7 +19,7 @@ export class HomeComponent implements OnInit {
   public city!: string;
   public state!: string;
   public tempo!: string;
-  constructor(private geoService: GeoService) {}
+  constructor(private geoService: GeoService, private router : Router ) {}
 
   ngOnInit(): void {
     //clock
@@ -40,7 +41,9 @@ export class HomeComponent implements OnInit {
     this.getCurrentLocation();
     //this.countdown()
   }
-
+  logout() {
+    return this.router.navigate(['/'])
+  }
   //getLocation
   getCurrentLocation(): void {
     navigator.geolocation.getCurrentPosition((position) => {

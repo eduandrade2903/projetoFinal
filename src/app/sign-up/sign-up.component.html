@@ -1,15 +1,23 @@
 
 <section id="section-signUp">
   <div class="colunm_1">
-    <form class="login-form">
+    <p class="login-title">Olá,</p>
+    <p class="login-description">
+      Não possui conta? Cadastre-se para continuar
+    </p>
+    <form class="login-form" (ngSubmit)="submit()" [formGroup]="SignForm">
+      <h2 class="form-title">Cadastro</h2>
       <div class="">
-        <input type="text" placeholder="usuario" class="user" >
+        <input type="text" placeholder="e-mail" class="input-form" formControlName="usuario">
       </div>
       <div>
-        <input type="text"  placeholder="Senha" class="user"/>
+        <input type="text"  placeholder="Senha" class="input-form"/>
       </div>
       <div>
-        <input type="text" placeholder="Confirme a senha" class="user"/>
+        <input type="text" placeholder="Confirme a senha" class="input-form"/>
+      </div>
+      <div>
+        <input type="submit" value="cadastrar" class="btn-submit">
       </div>
     </form>
   </div>
