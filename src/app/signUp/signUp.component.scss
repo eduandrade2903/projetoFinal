@@ -3,13 +3,15 @@
   display: flex;
   grid-template-columns: 1fr 1fr;
   .colunm_1 {
-    height: 100vh;
+    min-height: 100vh;
     width: 45.5%;
+    object-fit: fill;
     margin: 0;
     background-image: linear-gradient(#33383d, #1c1d20);
+    background-image: cover;
     .login-title{
       font-family: 'Mark Pro';
-      margin-top: 3.3em;
+      margin-top: 1.5em;
       margin-left: 31%;
       color: $cor-primaria;
       font-weight: 400;
@@ -25,8 +27,9 @@
 
     }
     .login-form {
+      margin-top: 0;
       .form-title{
-        margin-top: 4.5em;
+        margin-top: 1em;
         font-size: 30px;
         margin-left: 9em;
         color: $cor-primaria
@@ -37,7 +40,7 @@
         height: 60px;
         padding-left: 20px;
         border-radius: 50px;
-        margin-top: 1.95em;
+        margin-top: 1.5em;
         margin-left: 31%;
         background-color: #26292c;
         border: solid 0.5px #fff;
@@ -46,9 +49,33 @@
           color: $cor-secundaria-gelo;
         }
       }
+
+
+      .validator-error{
+        font-size: 0.5em;
+        color : $cor-primaria-bege;
+        font-weight: 700;
+        width: 30%;
+        text-align: left;
+        margin-top: 1.5em;
+        margin-left:35em;
+        height: 5vh;
+      }
+      .match-error{
+        font-size: 0.5em;
+        color : $cor-primaria-bege;
+        font-weight: 700;
+        width: 30%;
+        text-align: left;
+        margin-top: 20em;
+        margin-left:35em;
+        height: 5vh;
+      }
+
+
       .btn-submit {
         display: block;
-        margin-top: 7.18em;
+        margin-top: 8.5em;
         margin-left: 16.5em;
         border: none;
         box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.15);
@@ -63,7 +90,7 @@
   }
   .colunm_2 {
     width: 54.5%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     background-image: url("../../assets/img/image 2.svg");
@@ -71,6 +98,8 @@
     background-size: cover;
     flex-direction: column;
     align-items: center;
+    object-fit: fill;
+
     .logo {
       width: 30%;
     }

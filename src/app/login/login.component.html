@@ -69,12 +69,12 @@
         class="validator-error"
         *ngIf="
       loginForm.get('usuario')?.errors?.['minlength']  && loginForm.get('usuario')?.touched ||
-      loginForm.get('senha')?.errors?.['minlength'] && senha.touched">
+      loginForm.get('senha')?.errors?.['minlength'] ||  loginForm.get('senha')?.errors?.['pattern'] && senha.touched ">
         <p>Ops, usuário ou senha inválidos. Tente Novamente!</p>
       </div>
 
-      <input class="btn-submit" type="submit" value="continuar"/>
-
+      <input class="btn-submit" type="submit" [disabled]="loginForm.invalid" value="continuar"/>
+      <p> Não possui conta?<a [routerLink]="['/signUp']"> Cadastre-se</a> </p>
     </form>
   </div>
   <div class="colunm_2">

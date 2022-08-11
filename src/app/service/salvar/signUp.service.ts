@@ -1,3 +1,4 @@
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Usuario } from 'src/app/models/usuario.model';
@@ -6,13 +7,10 @@ import { Usuario } from 'src/app/models/usuario.model';
   providedIn: 'root',
 })
 export class SignUpService {
-  constructor(private afd : AngularFirestore) {}
+  constructor(private afd : AngularFirestore, private afa : AngularFireAuth) {}
 
   create(usuario: Usuario) {
-    this.afd.collection('User').doc().set(usuario).then(
-      (res) => {
-        console.log(res)
-      }
-    ).catch(erro => console.log(erro) )
+    // this.afd.collection('User').doc().set(usuario)
+    return this.afa.createUserWithEmailAndPassword(usuario.usuario , usuario.senha);
   }
 }

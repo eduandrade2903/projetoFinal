@@ -1,8 +1,10 @@
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Dias } from '../enums/enum-dias';
 import { Meses } from '../enums/enum-meses';
 import { GeoService } from '../service/geo.service';
+import { ReCaptchaEnterpriseProvider } from 'firebase/app-check';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +21,7 @@ export class HomeComponent implements OnInit {
   public city!: string;
   public state!: string;
   public tempo!: string;
-  constructor(private geoService: GeoService, private router : Router ) {}
+  constructor(private geoService: GeoService, private router : Router , private afa : AngularFireAuth) {}
 
   ngOnInit(): void {
     //clock
@@ -42,7 +44,11 @@ export class HomeComponent implements OnInit {
     //this.countdown()
   }
   logout() {
-    return this.router.navigate(['/'])
+    this.afa.signOut().then( () => this.router.navigate(['']))
+  }
+  continue(){
+    this.afa.signOut().then(() => window.location.href = 'https://www.google.com/');
+
   }
   //getLocation
   getCurrentLocation(): void {

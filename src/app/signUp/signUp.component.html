@@ -1,0 +1,69 @@
+<section id="section-signUp">
+  <div class="colunm_1">
+    <p class="login-title">Olá,</p>
+    <p class="login-description">
+      Não possui conta? Cadastre-se para continuar
+    </p>
+    <form class="login-form" (ngSubmit)="save()" [formGroup]="SignForm">
+      <h2 class="form-title">Cadastro</h2>
+      <div class="">
+        <input
+          type="text"
+          placeholder="e-mail"
+          class="input-form"
+          formControlName="usuario"
+        />
+      </div>
+      <div
+        class="validator-error"
+        *ngIf="SignForm.get('usuario')?.errors?.['minlength'] && SignForm.get('usuario')?.touched"
+      >
+        <p>O email deve estar no formato "email@email.com"</p>
+      </div>
+      <div>
+        <input
+          type="password"
+          placeholder="Senha"
+          class="input-form"
+          formControlName="senha"
+        />
+      </div>
+      <div>
+        <input
+          type="password"
+          placeholder="Confirme a senha"
+          class="input-form"
+          formControlName="confirma"
+        />
+      </div>
+      <div
+        class="validator-error"
+        *ngIf="
+      SignForm.get('senha')?.errors?.['minlength'] && SignForm.touched || SignForm.get('senha')?.errors?.['pattern']"
+      >
+        <div class="requisition">
+          <p>Sua senha deve conter:</p>
+          <p>Minímo 6 caracteres</p>
+          <p>Letra Maíuscula</p>
+          <p>Letra Miníscula</p>
+          <p>Um numero</p>
+          <p>Um caracter especial : @#$%&!</p>
+        </div>
+      </div>
+      <div  class="match-error" *ngIf="SignForm.get('senha')?.value  !== SignForm.get('confirma')?.value">
+        <small>As senhas não conferem</small>
+      </div>
+        <input type="submit" value="cadastrar" class="btn-submit" />
+        <p>Já possui conta?<a [routerLink]="['/']">Entre</a></p>
+
+    </form>
+  </div>
+
+  <div class="colunm_2">
+    <img
+      src="../../assets/img/Logo-Compasso-Branco-hor 1.svg"
+      alt="Logo Compasso Branco"
+      class="logo"
+    />
+  </div>
+</section>
