@@ -1,6 +1,7 @@
+
 import { environment } from './../environments/environment';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule,  } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -9,12 +10,14 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule} from '@angular/fire/compat';
-import { SignUpComponent } from './sign-up/sign-up.component'
+import { SignUpModule } from './signUp/signUp.module';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,10 @@ import { SignUpComponent } from './sign-up/sign-up.component'
     ReactiveFormsModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    routing
+    AngularFireAuthModule,
+    SignUpModule,
+    routing,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
