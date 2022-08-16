@@ -16,6 +16,7 @@ export class SignUpComponent implements OnInit {
     private signUp: SignUpService,
     private router: Router
   ) {
+    //instanciando formulario e campos
     this.SignForm = formBuilder.group({
       usuario: [
         '',
