@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
     }, 1000);
 
     this.getCurrentLocation();
-    //this.countdown()
+    this.countdown()
   }
   logout() {
     this.afa.signOut().then( () => this.router.navigate(['']))
@@ -81,7 +81,7 @@ export class HomeComponent implements OnInit {
       countdown.innerHTML = `${seconds} `;
       countTime--;
       setTimeout(() => {
-        window.location.replace('http://localhost:4200');
+       this.logout();
       }, 60 * 1000);
     }, 1000);
   }

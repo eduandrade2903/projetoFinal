@@ -23,17 +23,32 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.createForm();
+  }
+
+
+  createForm() {
     //validations
-    this.loginForm = this.formBuilder.group({
-      usuario: ['', Validators.minLength(3)],
-      senha: ['', Validators.compose([
-        Validators.minLength(6),
-        Validators.pattern(/[A-z]*/),
-        Validators.pattern(/[a-z]*/),
-        Validators.pattern(/[0-9]*/),
-        Validators.pattern(/[@#$%&!-]*/),
-        Validators.required,
-      ]),],
+   return this.loginForm = this.formBuilder.group({
+      usuario: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.minLength(6),
+          Validators.email,
+        ]),
+      ],
+      senha: [
+        '',
+        Validators.compose([
+          Validators.minLength(6),
+          Validators.pattern(/[A-z]*/),
+          Validators.pattern(/[a-z]*/),
+          Validators.pattern(/[0-9]*/),
+          Validators.pattern(/[@#$%&!-]*/),
+          Validators.required,
+        ]),
+      ],
     });
   }
   //get user
@@ -47,16 +62,12 @@ export class LoginComponent implements OnInit {
 
   submit() {
     if (this.loginForm.invalid) {
-      console.log('algo deu errado!!')
+      console.log('algo deu errado!!');
       return;
     } else {
-      this.loginService.auth(this.loginForm.value).then(
-        ()=> {
-          this.router.navigate(['home']);
-        }
-      )
-
-
+      this.loginService.auth(this.loginForm.value).then(() => {
+        this.router.navigate(['home']);
+      });
     }
   }
 }

@@ -10,7 +10,6 @@ export class SignUpService {
   constructor(private afd : AngularFirestore, private afa : AngularFireAuth) {}
 
   create(usuario: Usuario) {
-    // this.afd.collection('User').doc().set(usuario)
     return this.afa.createUserWithEmailAndPassword(usuario.usuario , usuario.senha);
   }
 }
