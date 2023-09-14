@@ -24,10 +24,19 @@ describe('LoginComponent', () => {
   it('should validate email', () => {
     const form = component.createForm();
     form.setValue({
-      "usuario" : "emailinvalido",
-      "senha" : '12356',
+      "usuario" : "usuarioinvalido",
+      "senha" : '@Eduandrade001',
 
     });
     expect(form.valid).toBeFalse();
   });
+
+  it('should validate password', () => {
+    const form = component.createForm();
+    form.setValue({
+      "usuario" : "email@email",
+      "senha" : '123456',
+    });
+    expect(form.valid).toBeFalse();
+  })
 });
